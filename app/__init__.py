@@ -5,7 +5,11 @@ from flask import Flask, render_template, abort
 
 from data.load_data import load_projects, load_profiles
 
-load_dotenv()
+if not os.environ.get("PRODUCTION"):
+    from dotenv import load_dotenv
+
+    load_dotenv()
+
 app = Flask(__name__)
 
 base_url = os.getenv("URL")
