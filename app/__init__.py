@@ -23,6 +23,10 @@ app = Flask(__name__)
 # projects = load_projects()
 # profiles = load_profiles()
 
+@app.route('/')
+def index():
+    return "Hello, World"
+
 
 # @app.route('/')
 # def index():
