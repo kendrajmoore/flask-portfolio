@@ -3,11 +3,11 @@ import os
 from dotenv import load_dotenv
 from flask import Flask, render_template, abort
 
-from data.load_data import load_projects, load_profiles
+# from data.load_data import load_projects, load_profiles
 
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
-load_dotenv()
+# load_dotenv()
 
 # if not os.environ.get("PRODUCTION"):
 #     from dotenv import load_dotenv
