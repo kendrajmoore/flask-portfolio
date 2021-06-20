@@ -1,4 +1,4 @@
-#!/Users/kendramoore/code-tutorial/flask-portfolio/venv/bin/python3
+#!/Users/kendramoore/code-tutorial/flask-portfolio/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
