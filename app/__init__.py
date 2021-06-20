@@ -16,6 +16,8 @@ from flask import Flask, render_template, abort
 
 app = Flask(__name__)
 
+from app import routes
+
 # base_url = os.getenv("URL")
 # projects_base_url = base_url + "/projects/"
 # profiles_base_url = base_url + "/profiles/"
@@ -23,9 +25,9 @@ app = Flask(__name__)
 # projects = load_projects()
 # profiles = load_profiles()
 
-@app.route('/')
-def index():
-    return "Hello, World"
+# @app.route('/')
+# def index():
+#     return "Hello, World"
 
 
 # @app.route('/')
