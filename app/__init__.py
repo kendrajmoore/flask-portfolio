@@ -2,6 +2,11 @@ import os
 
 # from dotenv import load_dotenv
 from flask import Flask, render_template, abort
+from flask_assets import Environment, Bundle
+
+app = Flask(__name__)
+
+from app import routes
 
 # from data.load_data import load_projects, load_profiles
 
@@ -14,10 +19,13 @@ from flask import Flask, render_template, abort
 
 #     load_dotenv()
 
-app = Flask(__name__)
 
-from app import routes
+assets = Environment()
+assets.init_app(app)
 
+
+css = Bundle('src/css/*.css', filters='postcss', output='dist/css/main.css')
+assets.register('css', css)
 # base_url = os.getenv("URL")
 # projects_base_url = base_url + "/projects/"
 # profiles_base_url = base_url + "/profiles/"
@@ -51,6 +59,6 @@ from app import routes
 #     return render_template('profile.html', item=profiles[name], title=title, url=profiles_base_url + name)
 
 
-@app.errorhandler(404)
-def page_not_found(e):
-    return render_template('404.html', title="Page not found"), 404
+# @app.errorhandler(404)
+# def page_not_found(e):
+#     return render_template('404.html', title="Page not found"), 404
