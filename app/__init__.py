@@ -1,10 +1,26 @@
 import os
 
-# from dotenv import load_dotenv
-from flask import Flask, render_template, abort
+from dotenv import load_dotenv, find_dotenv
+from flask import Flask
+from config import Config
 from flask_assets import Environment, Bundle
+from config import Config
+from app import db
+
+load_dotenv(find_dotenv())
 
 app = Flask(__name__)
+app.config.from_object(Config)
+app.config['DATABASE'] = os.path.join(os.getcwd(), 'flask.sqlite')
+
+assets = Environment()
+assets.init_app(app)
+db.init_app(app)
+
+
+css = Bundle('src/css/*.css', filters='postcss', output='dist/css/main.css')
+assets.register('css', css)
+
 
 from app import routes
 
@@ -20,12 +36,12 @@ from app import routes
 #     load_dotenv()
 
 
-assets = Environment()
-assets.init_app(app)
+# assets = Environment()
+# assets.init_app(app)
 
 
-css = Bundle('src/css/*.css', filters='postcss', output='dist/css/main.css')
-assets.register('css', css)
+# css = Bundle('src/css/*.css', filters='postcss', output='dist/css/main.css')
+# assets.register('css', css)
 # base_url = os.getenv("URL")
 # projects_base_url = base_url + "/projects/"
 # profiles_base_url = base_url + "/profiles/"

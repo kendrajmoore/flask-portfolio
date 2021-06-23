@@ -6,3 +6,4 @@ __pycache__
 /python3-virtualenv
 node_modules
 venv
+flask.sqlite
