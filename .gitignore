@@ -5,5 +5,4 @@ __pycache__
 .idea
 /python3-virtualenv
 node_modules
-venv
 flask.sqlite
