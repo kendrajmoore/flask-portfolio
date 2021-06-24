@@ -1,0 +1,16 @@
+{% include 'header.html' %}
+{% block content %}
+    <h1>Register</h1>
+    <form method="post">
+        <p>
+            {{ form.username.label }} <br>
+            {{ form.username }}<br>
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password }}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}
+{% include 'footer.html' %}

@@ -2,6 +2,8 @@ from flask import render_template, request
 from app import app
 from werkzeug.security import check_password_hash, generate_password_hash
 from app.db import get_db
+from app.forms import RegistrationForm
+from app.forms import LoginForm
 
 @app.route('/')
 def index():
@@ -9,6 +11,7 @@ def index():
 
 @app.route('/register', methods=('GET', 'POST'))
 def register():
+    form = RegistrationForm()
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
@@ -35,10 +38,11 @@ def register():
             return error, 418
 
     ## TODO: Return a restister page
-    return "Register Page not yet implemented", 501
+    return render_template('register.html', title='Register', form=form)
 
 @app.route('/login', methods=('GET', 'POST'))
 def login():
+    form = LoginForm()
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
@@ -59,7 +63,7 @@ def login():
             return error, 418
     
     ## TODO: Return a login page
-    return "Login Page not yet implemented", 501
+    return render_template('login.html', title='Login', form=form)
 
 
 
