@@ -4,25 +4,36 @@ from dotenv import load_dotenv, find_dotenv
 from flask import Flask
 from config import Config
 from flask_assets import Environment, Bundle
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 from config import Config
-from app import db
+
 
 load_dotenv(find_dotenv())
 
 app = Flask(__name__)
 app.config.from_object(Config)
-app.config['DATABASE'] = os.path.join(os.getcwd(), 'flask.sqlite')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://{user}:{passwd}@{host}:{port}/{table}'.format(
+    user=os.getenv('POSTGRES_USER'),
+    passwd=os.getenv('POSTGRES_PASSWORD'),
+    host=os.getenv('POSTGRES_HOST'),
+    port=5432,
+    table=os.getenv('POSTGRES_DB'))
+
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 
 assets = Environment()
 assets.init_app(app)
-db.init_app(app)
 
 
 css = Bundle('src/css/*.css', filters='postcss', output='dist/css/main.css')
 assets.register('css', css)
 
 
-from app import routes
+from app import routes, models
 
 # from data.load_data import load_projects, load_profiles
 

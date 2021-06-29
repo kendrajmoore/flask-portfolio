@@ -1,7 +1,6 @@
 from flask import render_template, request
 from app import app
 from werkzeug.security import check_password_hash, generate_password_hash
-from app.db import get_db
 from app.forms import RegistrationForm
 from app.forms import LoginForm
 
