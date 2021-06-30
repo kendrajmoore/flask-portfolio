@@ -62,6 +62,7 @@ def health():
 
 @app.route('/register', methods=('GET', 'POST'))
 def register():
+    form = RegistrationForm()
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
@@ -83,11 +84,12 @@ def register():
             return error, 418
 
     # TODO: Return a restister page
-    return "Register Page not yet implemented", 501
+    return render_template('register.html', title='Register', form=form)
 
 
 @app.route('/login', methods=('GET', 'POST'))
 def login():
+    form = LoginForm()
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
@@ -105,7 +107,7 @@ def login():
             return error, 418
 
     # TODO: Return a login page
-    return "Login Page not yet implemented", 501
+    return render_template('login.html', title='Login', form=form)
 
 
 # from app import models
