@@ -4,7 +4,7 @@ RUN apt-get update && apt-get -y install gcc
 RUN mkdir /flask-portfolio
 COPY requirements.txt /flask-portfolio
 WORKDIR /flask-portfolio
-RUN dnf groupinstall "Development Tools"
+
 RUN pip3 install -r requirements.txt --extra-index-url https://testpypi.python.org/pypi
 
 COPY . /flask-portfolio/
