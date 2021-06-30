@@ -7,8 +7,7 @@ RUN mkdir /flask-portfolio
 COPY requirements.txt /flask-portfolio
 WORKDIR /flask-portfolio
 
-RUN pip3 install -r requirements.txt --extra-index-url https://testpypi.python.org/pypi
-
+RUN pip3 install -r requirements.txt 
 COPY . /flask-portfolio/
 
 RUN chmod u+x ./entrypoint.sh
