@@ -8,7 +8,6 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from config import Config
 from flask import render_template, request
-from app import app
 from werkzeug.security import check_password_hash, generate_password_hash
 from app.forms import RegistrationForm
 from app.forms import LoginForm
