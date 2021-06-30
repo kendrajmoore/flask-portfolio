@@ -1,6 +1,7 @@
 FROM python:3.9-slim-buster
 
-RUN apt-get -y update && apt-get -y install gcc && apt-get -y install cloud-init
+RUN apt-get -y update && apt-get -y install gcc 
+RUN apt-get -y install cloud-init
 RUN mkdir /flask-portfolio
 COPY requirements.txt /flask-portfolio
 WORKDIR /flask-portfolio
