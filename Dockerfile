@@ -1,9 +1,9 @@
 FROM python:3.8-slim-buster
 
-RUN sudo yum update && yum upgrade
+RUN yum update && yum upgrade
 
 
-RUN sudo yum install --no-cache curl python pkgconfig python-dev openssl-dev libffi-dev musl-dev make gcc
+RUN yum install --no-cache curl python pkgconfig python-dev openssl-dev libffi-dev musl-dev make gcc
 
 RUN curl -sS https://bootstrap.pypa.io/get-pip.py | python3
 
