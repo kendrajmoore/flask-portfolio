@@ -1,5 +1,6 @@
 FROM python:3.9-slim-buster
 
+RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 RUN apt-get -y update && apt-get -y install gcc 
 RUN apt-get -y install cloud-init
 RUN mkdir /flask-portfolio
