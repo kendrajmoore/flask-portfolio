@@ -2,8 +2,6 @@ version: '3'
 services:
     web:
         build: .
-        ports:
-            - "80:80"
         restart: always
         env_file: 
             - .env
@@ -18,7 +16,7 @@ services:
         env_file: 
             - .env
     nginx:
-        image: jonasal/nginx-certbot
+        image: jonasal/nginx-certbot:latest
         restart: unless-stopped
         env_file: 
             - ./nginx-certbot.env
@@ -26,10 +24,10 @@ services:
             - 80:80
             - 443:443
         volumes:
-            - nginx_secrets:/etc/letsen
+            - nginx_secrets:/etc/letsencrypt
             - ./user_conf.d:/etc/nginx/user_conf.d
         depends_on: 
             - web
 
 volumes: 
-    nginx_secrets
+    nginx_secrets:
