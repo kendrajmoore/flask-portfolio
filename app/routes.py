@@ -1,12 +1,13 @@
 import os
+from app import app
 from flask import render_template, request
 from werkzeug.security import check_password_hash, generate_password_hash
-from app import app
 from app.forms import RegistrationForm
 from app.forms import LoginForm
 
 
-from app import db
+from flask_sqlalchemy import SQLAlchemy
+db = SQLAlchemy()
 
 class UserModel(db.Model):
     __tablename__ = 'users'
