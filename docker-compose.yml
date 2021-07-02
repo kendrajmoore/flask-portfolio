@@ -16,18 +16,22 @@ services:
         env_file: 
             - .env
     nginx:
-        image: jonasal/nginx-certbot:latest
+        image: nginx:latest
         restart: unless-stopped
-        env_file: 
-            - ./nginx-certbot.env
         ports:
             - 80:80
             - 443:443
         volumes:
-            - nginx_secrets:/etc/letsencrypt
-            - ./user_conf.d:/etc/nginx/user_conf.d
+            - ./conf.d:/etc/nginx/conf.d
+            - ./certbot/conf:/etc/nginx/ssl
+            - ./certbot/data:/var/www/certbot
         depends_on: 
             - web
+    certbot:
+        image: certbot/certbot:latest
+        command: certonly --webroot --webroot-path=/var/www/certbot --email your-email@domain.com --agree-tos --no-eff-email -d domain.com -d www.domain.com
+        volumes:
+            - ./certbot/conf:/etc/letsencrypt
+            - ./certbot/logs:/var/log/letsencrypt
+            - ./certbot/data:/var/www/certbot
 
-volumes: 
-    nginx_secrets:
