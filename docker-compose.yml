@@ -6,7 +6,7 @@ services:
         env_file: 
             - .env
         volumes:
-            - ./myportfolio
+            - "/var/lib/docker/volumes/myportfolio/_data"
         depends_on: 
             - db
 
