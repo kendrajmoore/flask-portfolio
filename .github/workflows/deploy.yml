@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -14,12 +15,12 @@ jobs:
         run: |
           mkdir -p ~/.ssh/
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/deploy-key.pem
-          chmod 600 ~/.~/.ssh/deploy-key.pem
+          chmod 600 ~/.ssh/deploy-key.pem
           cat >>~/.ssh/config <<END
           Host my-vm 
-            HostName $"$SSH_IP 
+            HostName $SSH_IP 
             User $SSH_USER 
-            IdentityFile ~/.~/.ssh/deploy-key.pem 
+            IdentityFile ~/.ssh/deploy-key.pem 
             StrictHostKeyChecking no
           END 
         env:
