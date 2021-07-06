@@ -10,6 +10,8 @@ load_dotenv(find_dotenv())
 
 app = Flask(__name__)
 
+SECRET_KEY = os.urandom(32)
+app.config['SECRET_KEY'] = SECRET_KEY
 
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://{user}:{passwd}@{host}:{port}/{table}'.format(
@@ -19,12 +21,19 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://{user}:{passwd}@{
     port=5432,
     table=os.getenv('POSTGRES_DB'))
 
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://{user}:{passwd}@{host}:{port}/{table}'.format(
+#     user=os.getenv('POSTGRES_USER'),
+#     passwd=os.getenv('POSTGRES_PASSWORD'),
+#     host=os.getenv('POSTGRES_HOST'),
+#     port=5432,
+#     table=os.getenv('POSTGRES_DB'))
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 
-from app import routes
+from app import models, routes
 
 

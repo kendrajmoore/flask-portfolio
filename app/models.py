@@ -1,15 +1,14 @@
-# from flask_sqlalchemy import SQLAlchemy
-# db = SQLAlchemy()
+from app import db
 
-# class UserModel(db.Model):
-#     __tablename__ = 'users'
+class UserModel(db.Model):
+    __tablename__ = 'users'
 
-#     username = db.Column(db.String(), primary_key=True)
-#     password = db.Column(db.String())
+    username = db.Column(db.String(), primary_key=True)
+    password = db.Column(db.String())
 
-#     def __init__(self, username, password):
-#         self.username = username
-#         self.password = password
+    def __init__(self, username, password):
+        self.username = username
+        self.password = password
 
-#     def __repr__(self):
-#         return f"<User {self.username}>"
+    def __repr__(self):
+        return f"<User {self.username}>"

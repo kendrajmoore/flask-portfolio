@@ -1,26 +1,12 @@
 import os
 from app import app
+from app import db
 from flask import render_template, request
+from app.models import UserModel
 from werkzeug.security import check_password_hash, generate_password_hash
 from app.forms import RegistrationForm
 from app.forms import LoginForm
 
-
-from flask_sqlalchemy import SQLAlchemy
-db = SQLAlchemy()
-
-class UserModel(db.Model):
-    __tablename__ = 'users'
-
-    username = db.Column(db.String(), primary_key=True)
-    password = db.Column(db.String())
-
-    def __init__(self, username, password):
-        self.username = username
-        self.password = password
-
-    def __repr__(self):
-        return f"<User {self.username}>"
 
 @app.route('/')
 def index():
@@ -44,8 +30,8 @@ def register():
             error = 'Username is required.'
         elif not password:
             error = 'Password is required.'
-        elif UserModel.query.filter_by(username=username).first() is not None:
-            error = f"User {username} is already registered."
+        # elif UserModel.query.filter_by(username=username).first() is not None:
+        #     error = f"User {username} is already registered."
 
         if error is None:
             new_user = UserModel(username, generate_password_hash(password))
