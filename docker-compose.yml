@@ -26,7 +26,7 @@ services:
         volumes: 
             - nginx_secrets:/etc/letsencrypt
             - ./user_conf.d:/etc/nginx/user_conf.d
-            - /etc/letsencrypt/archive/kjmoore.duckdns.org:/etc/ssl/private
+            - /etc/letsencrypt/archive/example.site.com:/etc/ssl/private
         depends_on: 
             - web
 volumes:
