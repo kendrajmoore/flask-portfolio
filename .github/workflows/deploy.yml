@@ -14,21 +14,13 @@ jobs:
       - name: Configure SSH
         run: |
           mkdir -p ~/.ssh/
-          echo "here1"
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/deploy-key.pem
-          echo "here2"
           chmod 600 ~/.ssh/deploy-key.pem
-          echo "here3"
           cat >>~/.ssh/config <<END
-          echo "here4"
           Host my-vm 
-            echo "here5"
             HostName $SSH_IP
-            echo "here6" 
-            User $SSH_USER
-            echo "here7"  
-            IdentityFile ~/.ssh/deploy-key.pem 
-            echo "here 8"  
+            User $SSH_USER 
+            IdentityFile ~/.ssh/deploy-key.pem  
             StrictHostKeyChecking no
           END 
         env:
