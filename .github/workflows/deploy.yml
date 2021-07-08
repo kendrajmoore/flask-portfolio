@@ -34,8 +34,10 @@ jobs:
       - name: Container status
         run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Deployment Successful"
 
-      - name: Shell
+      - name: Checkout
         uses: actions/checkout@v2 
+
+      - name: Run Script
         run: bash prod-test.sh
 
         
