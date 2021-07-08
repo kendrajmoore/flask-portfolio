@@ -14,13 +14,6 @@ SECRET_KEY = os.urandom(32)
 app.config['SECRET_KEY'] = SECRET_KEY
 
 
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://{user}:{passwd}@{host}:{port}/{table}'.format(
-#     user=os.getenv('POSTGRES_USER'),
-#     passwd=os.getenv('POSTGRES_PASSWORD'),
-#     host=os.getenv('POSTGRES_HOST'),
-#     port=5432,
-#     table=os.getenv('POSTGRES_DB'))
-
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://{user}:{passwd}@{host}:{port}/{table}'.format(
     user=os.getenv('POSTGRES_USER'),
     passwd=os.getenv('POSTGRES_PASSWORD'),
@@ -35,5 +28,6 @@ migrate = Migrate(app, db)
 
 
 from app import models, routes
+
 
 
