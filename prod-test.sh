@@ -1,7 +1,7 @@
 #!/bin/sh
 
 number="200"
-url=(https://kjmoore.duckdns.org, https://kjmoore.duckdns.org/register, https://kjmoore.duckdns.org/login)
+url=(https://kjmoore.duckdns.org, https://kjmoore.duckdns.org/register, https://kjmoore.duckdns.org/login, https://kjmoore.duckdns.org/kendra)
 
 for i in ${url[@]}; do
     status="$(curl ${url[@]} -I -o headers -s)"
