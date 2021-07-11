@@ -1,34 +1,122 @@
 /* Navbar */
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, hsla(197, 100%, 63%, 1) 0%, hsla(294, 100%, 55%, 1) 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
 
 .navbar-light, .navbar-brand, .navbar-link, .nav-item {
     color: white !important;
 }
 /* Hero Image */
 .hero-background-img {
+    height: 100vh;
     background-color: #FA8BFF;
-    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
+    background: linear-gradient(135deg, hsla(197, 100%, 63%, 1) 0%, hsla(294, 100%, 55%, 1) 100%);
+    /* background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    padding-top:250px;
-    padding-bottom:250px;
+    padding-top: 400px;
 
 }
 
 h1.hero {
     color: white;
-}
-/* buttons */
-a.btn.btn-secondary {
-    background-color: #FA8BFF;
-    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
-    border:  #FA8BFF;
-    
+    padding-bottom: 50px;
 
 }
 
-.btn-secondary {
+/* 404 page */
+.hero-background-img-two {
+    height: 100vh;
+    background-image: url("../static/img/404.png");
     background-color: #FA8BFF;
-    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
-    border:  #FA8BFF;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-top: 400px;
+
+}
+
+
+/* About Me */
+
+h1.about {
+    text-align: center;
+    color: white;
+    margin-top: 150px;
+}
+
+p.about {
+    text-align: center;
+    margin-top: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-bottom: 100px;
+}
+
+h3.hobbies {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+img.about {
+    width: 200px;
+    height: 300px;
+    margin-top: 50px;
+    margin-left: 550px;
+    box-shadow: 10px 10px 5px gray;
+}
+
+/* Login */
+
+form {
+    margin-top: 200px;
+    margin-left: 500px;
+}
+
+input {
+    box-shadow: 5px 5px 5px gray;
+}
+
+/* Blog */
+
+.container-blog {
+    padding-top: 200px;
+}
+
+p.card-text {
+    color: black;
+}
+
+h5.card-title {
+    color: black;
+}
+
+/* Projects */
+
+.container-project {
+    padding-top: 200px;
+}
+
+/* h1.form {
+    margin-top: 100px;
+} */
+
+/* Footer */
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+}
+
+span {
+    padding-left: 500px;
+    color: white;
 }

@@ -1,8 +1,10 @@
 
 {% include 'header.html' %}
+{% include 'nav.html' %}
+<div class="container">  
 {% block content %} 
-    <h1>Sign In</h1>
     <form method="post">
+        <h1 class="form">Login</h1>
         <p>
             {{ form.username.label }}<br>
             {{ form.username }}
@@ -12,7 +14,9 @@
             {{ form.password }}
         </p>
         <p>{{ form.submit() }}</p>
+        <a href="/register">Register</a>
     </form>
-{% endblock %}
+    {% endblock %}
+</div>
 {% include 'footer.html' %}
   

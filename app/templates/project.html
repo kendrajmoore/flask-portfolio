@@ -1,41 +1,31 @@
 {% include 'header.html' %}
-
-<main>
-    <div class="profile">
-        <div class="profile-picture">
-            <img class="rounded-circle" src="{{ item.image }}" alt="{{ item.name }}">
-        </div>
-        <h1>{{ item.name }}</h1>
+{% include 'nav.html' %}
+<div class="container-project">
+  <div class="card-group">
+    <div class="card">
+      <img src="../static/img/gamedex.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Gamedex</h5>
+        <p class="card-text">An app to track esports events.</p>
+        <a href="http://moodefy.herokuapp.com/" class="btn btn-primary">Medium</a>
+      </div>
     </div>
-
-
-    <div class="container profile-info">
-        <section>
-            <h3><i class="bi bi-kanban-fill"></i>Description</h3>
-            <p>{{ item.description }}</p>
-        </section>
-            <hr>
-            <section>
-                <h3><i class="bi bi-gear-fill"></i>Tools and technologies</h3>
-                <ul>
-                    {% for tool in item.tools %}
-                        <li> {{ tool }}</li>
-                    {% endfor %}
-                </ul>
-            </section>
-            <hr>
-            <section>
-                <h3>Check it out!</h3>
-                <div class="icons-container">
-                    <a href="{{ item.source }}"><i class="bi bi-github "></i></a>
-                    <a href="{{ item.link }}"><i class="bi bi-globe"></i></a>
-                </div>
-            </section>
-        <div class="button-container">
-            <a class="btn btn-outline-primary" href="/" role="button"><i class="bi bi-arrow-return-left"></i>&nbsp;&nbsp;Return
-                to home</a>
-        </div>
+    <div class="card">
+      <img src="../static/img/magic.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Magic Card Tracker</h5>
+        <p class="card-text">An app to keep track of magic cards.</p>
+        <a href="https://magic-cards-kjm.herokuapp.com/" class="btn btn-primary">Medium</a>
+      </div>
     </div>
-</main>
-
+    <div class="card">
+      <img src="../static/img/moodefy.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Moodefy</h5>
+        <p class="card-text">An app for social justice.</p>
+        <a href="https://medium.com/@kendra.j.mosley/a-serverless-summer-3b2c2c778249" class="btn btn-primary">Medium</a>
+      </div>
+    </div>
+  </div>
+</div>
 {% include 'footer.html' %}

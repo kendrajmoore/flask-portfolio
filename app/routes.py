@@ -10,12 +10,24 @@ from app.forms import LoginForm
 
 @app.route("/")
 def index():
-    return render_template("index.html", title="MLH Fellow", url=os.getenv("URL"))
+    return render_template("index.html", title="Welcome", url=os.getenv("URL")), 200
 
 
 @app.route("/health")
 def health():
     return "Works"
+
+@app.route("/about")
+def about():
+    return render_template("about.html", title="About Me", url=os.getenv("URL")), 200
+
+@app.route("/blog")
+def blog():
+    return render_template("blog.html", title="Blogs", url=os.getenv("URL")), 200
+
+@app.route("/project")
+def project():
+    return render_template("project.html", title="Projects", url=os.getenv("URL")), 200
 
 
 @app.route("/register", methods=("GET", "POST"))
@@ -30,8 +42,7 @@ def register():
             error = "Username is required."
         elif not password:
             error = "Password is required."
-        # elif UserModel.query.filter_by(username=username).first() is not None:
-        #     error = f"User {username} is already registered."
+    
 
         if error is None:
             new_user = UserModel(username, generate_password_hash(password))
@@ -42,7 +53,7 @@ def register():
             return error, 418
 
     # TODO: Return a restister page
-    return render_template("register.html", title="Register", form=form)
+    return render_template("register.html", title="Register", form=form), 200
 
 
 @app.route("/login", methods=("GET", "POST"))
@@ -65,4 +76,8 @@ def login():
             return error, 418
 
     # TODO: Return a login page
-    return render_template("login.html", title="Login", form=form)
+    return render_template("login.html", title="Login", form=form), 200
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template("404.html", title="Login"), 404
