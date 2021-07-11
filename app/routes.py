@@ -17,13 +17,16 @@ def index():
 def health():
     return "Works"
 
+
 @app.route("/about")
 def about():
     return render_template("about.html", title="About Me", url=os.getenv("URL")), 200
 
+
 @app.route("/blog")
 def blog():
     return render_template("blog.html", title="Blogs", url=os.getenv("URL")), 200
+
 
 @app.route("/project")
 def project():
@@ -42,7 +45,6 @@ def register():
             error = "Username is required."
         elif not password:
             error = "Password is required."
-    
 
         if error is None:
             new_user = UserModel(username, generate_password_hash(password))
@@ -77,6 +79,7 @@ def login():
 
     # TODO: Return a login page
     return render_template("login.html", title="Login", form=form), 200
+
 
 @app.errorhandler(404)
 def page_not_found(error):
