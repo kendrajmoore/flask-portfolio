@@ -6,4 +6,5 @@ __pycache__
 /python3-virtualenv
 node_modules
 flask.sqlite
+nginx-certbot.env
 venv
