@@ -161,7 +161,6 @@ span {
 .flip-card {
     background-color: transparent;
     width: 300px;
-    border: 1px solid #f1f1f1;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
     margin-top: 150px;
     margin-left: 45%;
@@ -207,9 +206,12 @@ span {
 
 
 /* Projects */
+.card-group {
+    justify-content: space-evenly;
+}
+
 div.project.flip-card {
     background-color: transparent;
-    border: 1px solid #f1f1f1;
     perspective: 1000px; 
     margin-top: 0px;
     margin-left: 150px;
