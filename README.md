@@ -8,7 +8,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/kendrajmoore/flask-portfolio">
-    <img src="jeep(1).png" alt="Logo" width="80" height="80">
+    <img src="https://i.ibb.co/gFL52pv/jeep.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Portfolio as a Service</h3>
@@ -52,7 +52,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![Product Name Screen Shot](https://i.ibb.co/Bc8W4GF/portfolio.png)
 
 This project was created in summer 2021 over the course of 12 weeks while I particpated in the MLH Production Engineering Fellowship. Production Engineering is a hybrid between software & systems engineering that works across product & infrastructure to make sure services are reliable & scalable.
 
@@ -88,17 +88,12 @@ This is an example of how to list things you need to use the software and how to
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/kendrajmoore/flask-portfolio
    ```
-2. Install NPM packages
+2. Install python packages
    ```sh
-   npm install
+   pip3 install -r requirements.txt
    ```
-2. Enter your API in `config.js`
-   ```JS
-   const API_KEY = 'ENTER YOUR API';
-   ```
-
 
 
 <!-- LICENSE -->
@@ -126,4 +121,4 @@ Project Link: [https://github.com/kendrajmoore/flask-portfolio](https://github.c
 [license-url]: https://github.com/kendrajmoore/flask-portfolio/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/kendrajmoore
-[product-screenshot]: Screen Shot 2021-07-30 at 9.19.40 PM.png
+
