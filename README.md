@@ -8,7 +8,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/kendrajmoore/flask-portfolio">
-    <img src="https://github.com/kendrajmoore/flask-portfolio/app/static/img/logo.svg" alt="Logo" width="80" height="80">
+    <img src="jeep(1).png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Portfolio as a Service</h3>
@@ -126,4 +126,4 @@ Project Link: [https://github.com/kendrajmoore/flask-portfolio](https://github.c
 [license-url]: https://github.com/kendrajmoore/flask-portfolio/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/kendrajmoore
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: Screen Shot 2021-07-30 at 9.19.40 PM.png
