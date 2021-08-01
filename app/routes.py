@@ -25,7 +25,7 @@ def about():
 
 @app.route("/blog")
 def blog():
-    return render_template("blog.html", title="Blogs", url=os.getenv("URL")), 200
+    return render_template("blog_two.html", title="Blogs", url=os.getenv("URL")), 200
 
 
 @app.route("/code")
@@ -79,7 +79,6 @@ def login():
 
     # TODO: Return a login page
     return render_template("login.html", title="Login", form=form), 200
-
 
 @app.route("/resume")
 def resume():
