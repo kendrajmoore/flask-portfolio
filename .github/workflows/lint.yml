@@ -21,12 +21,12 @@ jobs:
         with:
           python-version: 3.8
 
-      - name: Install Python dependencies
-        run: pip install black
+      # - name: Install Python dependencies
+      #   run: pip install black
 
-      - name: Run linters
-        uses: wearerequired/lint-action@v1 
-        with:
-          black: true
+      # - name: Run linters
+      #   uses: wearerequired/lint-action@v1 
+      #   with:
+      #     black: true
           
 
