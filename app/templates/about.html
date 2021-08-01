@@ -1,37 +1,25 @@
 {% include 'header.html' %}
 {% include 'nav.html' %}
-  <div class="bio">
-    <h1 class="about">About Me</h1>
-    <img src="../static/img/kendra.png" class="about">
-    <p class="about">Hi! I am a self-taught computer programmer and graduate student. I study at University of California, Berkeley as part of the MIMS
-    (Masters of Information Management and Systems) program. I focus on UX Research and Cybersecurity and will graduate in May 2023.
-    </p>
-  </div>
-  <div class="container mb-5 mt-5">
-    <div class="row">
-      <div class="col-lg-4">
-        <h3 class="hobbies">Hobbies</h3>
-        <ul>
-          <li>Programming</li>
-          <li>Cycling</li>
-          <li>Jeeping</li>
-        </ul>
+<div class="about">
+  <h1 class="about">About Me</h1>
+  <div class="flip-card">
+    <div class="flip-card-inner" style="width:300px;height:400px;">
+      <div class="flip-card-front" style="width:300px;height:400px;">
+        <img src="/static/img/kendra.png" alt="Avatar" style="width:300px;height:400px;">
       </div>
-      <div class="col-lg-4">
-        <h3 class="hobbies">Education</h3>
-        <ul>
-          <li>BA, Georgia Southern University</li>
-          <li>MS, McCombs School of Business, UT Austin</li>
-          <li>MS, School of Information, UC Berkeley</li>
-        </ul>
-      </div>
-      <div class="col-lg-4">
-        <h3 class="hobbies">Programming Tools</h3>
-        <ul>
-          <li>Python</li>
-          <li>Node</li>
-          <li>React</li>
-        </ul>
+      <div class="flip-card-back" style="width:300px;height:400px;">
+        <h1 class="about-card">Kendra Moore</h1>
+        <p>MIMS, UC Berkeley</p>
+        <p class="about">I am a first year graduate student focused on
+          HCI and UX research. I have four years of
+          self taught programming experience in Python, 
+          JavaScript, C, and Swift. My hobbies include 
+          working out, reading, and off roading in my jeep.
+        </p>
       </div>
     </div>
   </div>
+</div>
+
+
+{% include 'footer.html' %}

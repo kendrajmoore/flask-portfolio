@@ -1,7 +1,7 @@
 import os
 from app import app
 from app import db
-from flask import render_template, request
+from flask import render_template, request, redirect
 from app.models import UserModel
 from werkzeug.security import check_password_hash, generate_password_hash
 from app.forms import RegistrationForm
@@ -25,10 +25,10 @@ def about():
 
 @app.route("/blog")
 def blog():
-    return render_template("blog.html", title="Blogs", url=os.getenv("URL")), 200
+    return render_template("blog_two.html", title="Blogs", url=os.getenv("URL")), 200
 
 
-@app.route("/project")
+@app.route("/code")
 def project():
     return render_template("project.html", title="Projects", url=os.getenv("URL")), 200
 
@@ -80,6 +80,10 @@ def login():
     # TODO: Return a login page
     return render_template("login.html", title="Login", form=form), 200
 
+@app.route("/resume")
+def resume():
+    return redirect("./static/files/kendra.pdf")
+    
 
 @app.errorhandler(404)
 def page_not_found(error):
