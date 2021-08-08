@@ -24,7 +24,7 @@ a.nav-item.nav-link.two {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    padding-top: 400px;
+    padding-top: 300px;
 
 }
 
@@ -32,6 +32,11 @@ a.nav-item.nav-link.two {
     color: white;
     padding-bottom: 50px;
     opacity: 0;
+}
+
+h3.thin-text {
+    font-weight: 300;
+    margin-bottom: 20px;
 }
 
 .cursor{
@@ -171,6 +176,7 @@ span {
     position: relative;
     width: 100%;
     height: 100%;
+    margin-right: 20px;
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
@@ -207,7 +213,7 @@ span {
 
 /* Projects */
 .card-group {
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 div.project.flip-card {
